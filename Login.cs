@@ -56,7 +56,7 @@ namespace Cachero_Group___Document_Request_System_Project
                             SessionManager.DbUserId = Convert.ToInt32(reader["user_id"]);
                             SessionManager.UserID = reader["username"].ToString();
                             SessionManager.FullName = reader["full_name"].ToString();
-                            SessionManager.Role = reader["role"].ToString();
+                            SessionManager.Role = reader["role"].ToString().Trim().ToLower();
 
                             if (SessionManager.Role == "student")
                             {
@@ -64,7 +64,10 @@ namespace Cachero_Group___Document_Request_System_Project
                                 studentDashboard.Show();
                                 this.Hide();
                             }
-                            else if (SessionManager.Role == "admin")
+                            else if (
+                                SessionManager.Role == "admin" ||
+                                SessionManager.Role == "registrar" ||
+                                SessionManager.Role == "guidance")
                             {
                                 AdminDashboard adminDashboard = new AdminDashboard();
                                 adminDashboard.Show();
@@ -72,7 +75,7 @@ namespace Cachero_Group___Document_Request_System_Project
                             }
                             else
                             {
-                                MessageBox.Show("Unknown user role.");
+                                MessageBox.Show("Unknown user role: " + SessionManager.Role);
                                 SessionManager.Clear();
                             }
                         }

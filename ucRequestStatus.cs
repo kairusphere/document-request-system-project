@@ -33,16 +33,22 @@ namespace Cachero_Group___Document_Request_System_Project
             dgvRequestStatus.Columns.Add("total_amount", "Total Amount");
             dgvRequestStatus.Columns.Add("date_requested", "Date Requested");
             dgvRequestStatus.Columns.Add("status", "Status");
+            dgvRequestStatus.Columns.Add("purpose", "Purpose");
+            dgvRequestStatus.Columns.Add("additional_notes", "Remarks");
+            dgvRequestStatus.Columns.Add("assigned_office", "Handled By");
+            dgvRequestStatus.Columns.Add("processing_time", "Processing Time");
 
             using (SQLiteConnection conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
 
                 string query = @"
-                    SELECT request_id, document_type, copies, total_amount, date_requested, status
+                    SELECT request_id, document_type, purpose, additional_notes, copies,
+                         total_amount, assigned_office, processing_time, date_requested, status
                     FROM requests
                     WHERE student_number = @studentNumber
                     ORDER BY request_id DESC";
+
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
@@ -58,7 +64,11 @@ namespace Cachero_Group___Document_Request_System_Project
                                 reader["copies"].ToString(),
                                 "₱ " + Convert.ToDecimal(reader["total_amount"]).ToString("0.00"),
                                 reader["date_requested"].ToString(),
-                                reader["status"].ToString()
+                                reader["status"].ToString(),
+                                reader["purpose"].ToString(),
+                                reader["additional_notes"].ToString(),
+                                reader["assigned_office"].ToString(),
+                                reader["processing_time"].ToString()
                             );
                         }
                     }

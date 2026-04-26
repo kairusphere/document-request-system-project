@@ -34,17 +34,17 @@ namespace Cachero_Group___Document_Request_System_Project
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.txtClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtStudentNumber = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
-            this.txtClear = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -129,6 +129,18 @@ namespace Cachero_Group___Document_Request_System_Project
             this.label2.TabIndex = 3;
             this.label2.Text = "User ID:";
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Myanmar Text", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(15, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(270, 34);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Developer Account Manager";
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -183,6 +195,20 @@ namespace Cachero_Group___Document_Request_System_Project
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // txtClear
+            // 
+            this.txtClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClear.BackColor = System.Drawing.Color.LimeGreen;
+            this.txtClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtClear.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClear.Location = new System.Drawing.Point(21, 441);
+            this.txtClear.Name = "txtClear";
+            this.txtClear.Size = new System.Drawing.Size(93, 32);
+            this.txtClear.TabIndex = 2;
+            this.txtClear.Text = "Clear";
+            this.txtClear.UseVisualStyleBackColor = false;
+            this.txtClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -204,7 +230,9 @@ namespace Cachero_Group___Document_Request_System_Project
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Student",
-            "Admin"});
+            "Admin",
+            "Registrar",
+            "Guidance"});
             this.cmbRole.Location = new System.Drawing.Point(135, 198);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(140, 35);
@@ -236,32 +264,6 @@ namespace Cachero_Group___Document_Request_System_Project
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(140, 35);
             this.txtFullName.TabIndex = 0;
-            // 
-            // txtClear
-            // 
-            this.txtClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClear.BackColor = System.Drawing.Color.LimeGreen;
-            this.txtClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtClear.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClear.Location = new System.Drawing.Point(21, 441);
-            this.txtClear.Name = "txtClear";
-            this.txtClear.Size = new System.Drawing.Size(93, 32);
-            this.txtClear.TabIndex = 2;
-            this.txtClear.Text = "Clear";
-            this.txtClear.UseVisualStyleBackColor = false;
-            this.txtClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar Text", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(270, 34);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Developer Account Manager";
             // 
             // DeveloperAccounts
             // 

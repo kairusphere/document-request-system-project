@@ -64,6 +64,7 @@ namespace Cachero_Group___Document_Request_System_Project
 
             lblCopyPrice.Text = "₱ " + pricePerCopy.ToString("0.00");
             lbltotalAmount.Text = "₱ " + total.ToString("0.00");
+            lblETA.Text = GetProcessingTime(selectedDoc);
         }
 
 
@@ -104,38 +105,43 @@ namespace Cachero_Group___Document_Request_System_Project
             decimal price = documentPrices[docType];
             decimal total = price * copies;
 
-
+            string assignedOffice = GetAssignedOffice(docType);
+            string processingTime = GetProcessingTime(docType);
             using (SQLiteConnection conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
 
                 string query = @"
-        INSERT INTO requests
-        (
-            student_number,
-            student_name,
-            document_type,
-            purpose,
-            additional_notes,
-            copies,
-            price_per_copy,
-            total_amount,
-            status,
-            date_requested
-        )
-        VALUES
-        (
-            @studentNumber,
-            @studentName,
-            @documentType,
-            @purpose,
-            @additionalNotes,
-            @copies,
-            @pricePerCopy,
-            @totalAmount,
-            @status,
-            @dateRequested
-        );";
+INSERT INTO requests
+(
+    student_number,
+    student_name,
+    document_type,
+    purpose,
+    additional_notes,
+    copies,
+    price_per_copy,
+    total_amount,
+    assigned_office,
+    processing_time,
+    status,
+    date_requested
+)
+VALUES
+(
+    @studentNumber,
+    @studentName,
+    @documentType,
+    @purpose,
+    @additionalNotes,
+    @copies,
+    @pricePerCopy,
+    @totalAmount,
+    @assignedOffice,
+    @processingTime,
+    @status,
+    @dateRequested
+);";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
@@ -149,6 +155,8 @@ namespace Cachero_Group___Document_Request_System_Project
                     cmd.Parameters.AddWithValue("@totalAmount", total);
                     cmd.Parameters.AddWithValue("@status", "Pending");
                     cmd.Parameters.AddWithValue("@dateRequested", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@assignedOffice", assignedOffice);
+                    cmd.Parameters.AddWithValue("@processingTime", processingTime);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -196,6 +204,28 @@ namespace Cachero_Group___Document_Request_System_Project
             numCopies.Value = 1;
             txtRemarks.Clear();
             chkAgreement.Checked = false;
+        }
+
+        private string GetAssignedOffice(string documentType)
+        {
+            if (documentType == "Certificate of Good Moral Character")
+                return "Guidance Counselor";
+
+            if (documentType == "Transcript of Records" || documentType == "Permit to Transfer")
+                return "Admin";
+
+            return "Registrar";
+        }
+
+        private string GetProcessingTime(string documentType)
+        {
+            if (documentType == "Transcript of Records")
+                return "5-7 working days";
+
+            if (documentType == "Permit to Transfer" || documentType == "Honorable Dismissal")
+                return "3-5 working days";
+
+            return "1-3 working days";
         }
     }
 }

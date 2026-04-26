@@ -36,16 +36,17 @@ namespace Cachero_Group___Document_Request_System_Project
             this.btnDbdToPortal = new System.Windows.Forms.Button();
             this.btnDbdAdminProfile = new System.Windows.Forms.Button();
             this.btnDbdManageRequests = new System.Windows.Forms.Button();
+            this.btnDbdDashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDbdAdminNum = new System.Windows.Forms.Label();
-            this.txtDbdAdminName = new System.Windows.Forms.Label();
+            this.lblAdminID = new System.Windows.Forms.Label();
+            this.lblAdminName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDbdContainer = new System.Windows.Forms.Panel();
-            this.btnDbdDashboard = new System.Windows.Forms.Button();
+            this.lblAdminRole = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelDbdSidebar.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -154,6 +155,20 @@ namespace Cachero_Group___Document_Request_System_Project
             this.btnDbdManageRequests.UseVisualStyleBackColor = false;
             this.btnDbdManageRequests.Click += new System.EventHandler(this.btnDbdManageRequests_Click);
             // 
+            // btnDbdDashboard
+            // 
+            this.btnDbdDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(59)))));
+            this.btnDbdDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDbdDashboard.Font = new System.Drawing.Font("Myanmar Text", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDbdDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDbdDashboard.Location = new System.Drawing.Point(45, 133);
+            this.btnDbdDashboard.Name = "btnDbdDashboard";
+            this.btnDbdDashboard.Size = new System.Drawing.Size(296, 33);
+            this.btnDbdDashboard.TabIndex = 4;
+            this.btnDbdDashboard.Text = "View Dashboard";
+            this.btnDbdDashboard.UseVisualStyleBackColor = false;
+            this.btnDbdDashboard.Click += new System.EventHandler(this.btnDbdDashboard_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LimeGreen;
@@ -165,8 +180,9 @@ namespace Cachero_Group___Document_Request_System_Project
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel3.Controls.Add(this.txtDbdAdminNum);
-            this.panel3.Controls.Add(this.txtDbdAdminName);
+            this.panel3.Controls.Add(this.lblAdminRole);
+            this.panel3.Controls.Add(this.lblAdminID);
+            this.panel3.Controls.Add(this.lblAdminName);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 657);
@@ -174,27 +190,27 @@ namespace Cachero_Group___Document_Request_System_Project
             this.panel3.Size = new System.Drawing.Size(382, 97);
             this.panel3.TabIndex = 1;
             // 
-            // txtDbdAdminNum
+            // lblAdminID
             // 
-            this.txtDbdAdminNum.AutoSize = true;
-            this.txtDbdAdminNum.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDbdAdminNum.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtDbdAdminNum.Location = new System.Drawing.Point(97, 38);
-            this.txtDbdAdminNum.Name = "txtDbdAdminNum";
-            this.txtDbdAdminNum.Size = new System.Drawing.Size(143, 27);
-            this.txtDbdAdminNum.TabIndex = 2;
-            this.txtDbdAdminNum.Text = "txtDbdAdminNum";
+            this.lblAdminID.AutoSize = true;
+            this.lblAdminID.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminID.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAdminID.Location = new System.Drawing.Point(97, 34);
+            this.lblAdminID.Name = "lblAdminID";
+            this.lblAdminID.Size = new System.Drawing.Size(111, 27);
+            this.lblAdminID.TabIndex = 2;
+            this.lblAdminID.Text = "lblAdminNum";
             // 
-            // txtDbdAdminName
+            // lblAdminName
             // 
-            this.txtDbdAdminName.AutoSize = true;
-            this.txtDbdAdminName.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDbdAdminName.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtDbdAdminName.Location = new System.Drawing.Point(97, 11);
-            this.txtDbdAdminName.Name = "txtDbdAdminName";
-            this.txtDbdAdminName.Size = new System.Drawing.Size(143, 27);
-            this.txtDbdAdminName.TabIndex = 2;
-            this.txtDbdAdminName.Text = "txtDbdAdminNum";
+            this.lblAdminName.AutoSize = true;
+            this.lblAdminName.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminName.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAdminName.Location = new System.Drawing.Point(97, 11);
+            this.lblAdminName.Name = "lblAdminName";
+            this.lblAdminName.Size = new System.Drawing.Size(118, 27);
+            this.lblAdminName.TabIndex = 2;
+            this.lblAdminName.Text = "lblAdminName";
             // 
             // pictureBox2
             // 
@@ -250,19 +266,16 @@ namespace Cachero_Group___Document_Request_System_Project
             this.panelDbdContainer.Size = new System.Drawing.Size(917, 754);
             this.panelDbdContainer.TabIndex = 0;
             // 
-            // btnDbdDashboard
+            // lblAdminRole
             // 
-            this.btnDbdDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(59)))));
-            this.btnDbdDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDbdDashboard.Font = new System.Drawing.Font("Myanmar Text", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDbdDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDbdDashboard.Location = new System.Drawing.Point(45, 133);
-            this.btnDbdDashboard.Name = "btnDbdDashboard";
-            this.btnDbdDashboard.Size = new System.Drawing.Size(296, 33);
-            this.btnDbdDashboard.TabIndex = 4;
-            this.btnDbdDashboard.Text = "View Dashboard";
-            this.btnDbdDashboard.UseVisualStyleBackColor = false;
-            this.btnDbdDashboard.Click += new System.EventHandler(this.btnDbdDashboard_Click);
+            this.lblAdminRole.AutoSize = true;
+            this.lblAdminRole.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminRole.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAdminRole.Location = new System.Drawing.Point(97, 61);
+            this.lblAdminRole.Name = "lblAdminRole";
+            this.lblAdminRole.Size = new System.Drawing.Size(107, 27);
+            this.lblAdminRole.TabIndex = 2;
+            this.lblAdminRole.Text = "lblAdminRole";
             // 
             // AdminDashboard
             // 
@@ -272,6 +285,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.Controls.Add(this.panel1);
             this.Name = "AdminDashboard";
             this.Text = "AdminDashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panelDbdSidebar.ResumeLayout(false);
             this.panelDbdSidebar.PerformLayout();
@@ -294,13 +308,14 @@ namespace Cachero_Group___Document_Request_System_Project
         private System.Windows.Forms.Button btnDbdManageRequests;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label txtDbdAdminNum;
-        private System.Windows.Forms.Label txtDbdAdminName;
+        private System.Windows.Forms.Label lblAdminID;
+        private System.Windows.Forms.Label lblAdminName;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelDbdContainer;
         private System.Windows.Forms.Button btnDbdDashboard;
+        private System.Windows.Forms.Label lblAdminRole;
     }
 }

@@ -25,6 +25,8 @@ namespace Cachero_Group___Document_Request_System_Project
             cmbRole.Items.Clear();
             cmbRole.Items.Add("student");
             cmbRole.Items.Add("admin");
+            cmbRole.Items.Add("registrar");
+            cmbRole.Items.Add("guidance");
             cmbRole.SelectedIndex = 0;
         }
 

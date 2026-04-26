@@ -163,6 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucAdminDashboard.resx">
+      <DependentUpon>ucAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>

@@ -37,13 +37,27 @@ namespace Cachero_Group___Document_Request_System_Project
                     student_name TEXT NOT NULL,
                     document_type TEXT NOT NULL,
                     purpose TEXT NOT NULL,
-                    additional_notes TEXT,
+                     additional_notes TEXT,
                     copies INTEGER NOT NULL,
                     price_per_copy REAL NOT NULL,
                     total_amount REAL NOT NULL,
+                    assigned_office TEXT,
+                    processing_time TEXT,
                     status TEXT NOT NULL,
                     date_requested TEXT NOT NULL
                 );";
+
+                try
+                {
+                    new SQLiteCommand("ALTER TABLE requests ADD COLUMN assigned_office TEXT;", conn).ExecuteNonQuery();
+                }
+                catch { }
+
+                try
+                {
+                    new SQLiteCommand("ALTER TABLE requests ADD COLUMN processing_time TEXT;", conn).ExecuteNonQuery();
+                }
+                catch { }
 
                 // Request Status - Notification
                 string createRequestStatusLogsTable = @"

@@ -43,6 +43,12 @@ namespace Cachero_Group___Document_Request_System_Project
             this.btnMarkProcessing = new System.Windows.Forms.Button();
             this.btnReadyForPickup = new System.Windows.Forms.Button();
             this.btnComplete = new System.Windows.Forms.Button();
+            this.lblText1 = new System.Windows.Forms.Label();
+            this.cmbDocumentTypeFilter = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbRoleFilter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbStatusFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +68,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.DateRequested,
             this.TotalAmount,
             this.Status});
-            this.dgvManageRequests.Location = new System.Drawing.Point(55, 147);
+            this.dgvManageRequests.Location = new System.Drawing.Point(55, 174);
             this.dgvManageRequests.MultiSelect = false;
             this.dgvManageRequests.Name = "dgvManageRequests";
             this.dgvManageRequests.ReadOnly = true;
@@ -70,7 +76,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.dgvManageRequests.RowHeadersWidth = 51;
             this.dgvManageRequests.RowTemplate.Height = 24;
             this.dgvManageRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManageRequests.Size = new System.Drawing.Size(941, 475);
+            this.dgvManageRequests.Size = new System.Drawing.Size(941, 448);
             this.dgvManageRequests.TabIndex = 10;
             // 
             // RequestID
@@ -217,11 +223,86 @@ namespace Cachero_Group___Document_Request_System_Project
             this.btnComplete.UseVisualStyleBackColor = false;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
+            // lblText1
+            // 
+            this.lblText1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblText1.AutoSize = true;
+            this.lblText1.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblText1.Location = new System.Drawing.Point(50, 141);
+            this.lblText1.Name = "lblText1";
+            this.lblText1.Size = new System.Drawing.Size(165, 30);
+            this.lblText1.TabIndex = 12;
+            this.lblText1.Text = "Sort by Document:";
+            // 
+            // cmbDocumentTypeFilter
+            // 
+            this.cmbDocumentTypeFilter.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDocumentTypeFilter.FormattingEnabled = true;
+            this.cmbDocumentTypeFilter.Location = new System.Drawing.Point(221, 137);
+            this.cmbDocumentTypeFilter.Name = "cmbDocumentTypeFilter";
+            this.cmbDocumentTypeFilter.Size = new System.Drawing.Size(139, 31);
+            this.cmbDocumentTypeFilter.TabIndex = 13;
+            this.cmbDocumentTypeFilter.SelectedIndexChanged += new System.EventHandler(this.cmbDocumentTypeFilter_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(409, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 30);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Role:";
+            // 
+            // cmbRoleFilter
+            // 
+            this.cmbRoleFilter.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRoleFilter.FormattingEnabled = true;
+            this.cmbRoleFilter.Location = new System.Drawing.Point(468, 136);
+            this.cmbRoleFilter.Name = "cmbRoleFilter";
+            this.cmbRoleFilter.Size = new System.Drawing.Size(138, 31);
+            this.cmbRoleFilter.TabIndex = 13;
+            this.cmbRoleFilter.SelectedIndexChanged += new System.EventHandler(this.cmbRoleFilter_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(651, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 30);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Status:";
+            // 
+            // cmbStatusFilter
+            // 
+            this.cmbStatusFilter.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatusFilter.FormattingEnabled = true;
+            this.cmbStatusFilter.Location = new System.Drawing.Point(725, 136);
+            this.cmbStatusFilter.Name = "cmbStatusFilter";
+            this.cmbStatusFilter.Size = new System.Drawing.Size(138, 31);
+            this.cmbStatusFilter.TabIndex = 13;
+            this.cmbStatusFilter.SelectionChangeCommitted += new System.EventHandler(this.cmbStatusFilter_SelectedIndexChanged);
+            // 
             // ucManageRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(35)))));
+            this.Controls.Add(this.cmbStatusFilter);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbRoleFilter);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbDocumentTypeFilter);
+            this.Controls.Add(this.lblText1);
             this.Controls.Add(this.btnMarkProcessing);
             this.Controls.Add(this.btnReadyForPickup);
             this.Controls.Add(this.btnComplete);
@@ -254,5 +335,11 @@ namespace Cachero_Group___Document_Request_System_Project
         private System.Windows.Forms.Button btnMarkProcessing;
         private System.Windows.Forms.Button btnReadyForPickup;
         private System.Windows.Forms.Button btnComplete;
+        private System.Windows.Forms.Label lblText1;
+        private System.Windows.Forms.ComboBox cmbDocumentTypeFilter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbRoleFilter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbStatusFilter;
     }
 }

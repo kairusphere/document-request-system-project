@@ -50,6 +50,8 @@ namespace Cachero_Group___Document_Request_System_Project
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblETA = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numCopies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,7 +229,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(562, 617);
+            this.label6.Location = new System.Drawing.Point(562, 620);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 36);
             this.label6.TabIndex = 1;
@@ -239,7 +241,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(565, 644);
+            this.label7.Location = new System.Drawing.Point(565, 647);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 36);
             this.label7.TabIndex = 1;
@@ -251,7 +253,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.lblCopyPrice.AutoSize = true;
             this.lblCopyPrice.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCopyPrice.ForeColor = System.Drawing.Color.White;
-            this.lblCopyPrice.Location = new System.Drawing.Point(711, 617);
+            this.lblCopyPrice.Location = new System.Drawing.Point(711, 620);
             this.lblCopyPrice.Name = "lblCopyPrice";
             this.lblCopyPrice.Size = new System.Drawing.Size(125, 36);
             this.lblCopyPrice.TabIndex = 1;
@@ -264,7 +266,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.lbltotalAmount.AutoSize = true;
             this.lbltotalAmount.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotalAmount.ForeColor = System.Drawing.Color.White;
-            this.lbltotalAmount.Location = new System.Drawing.Point(711, 644);
+            this.lbltotalAmount.Location = new System.Drawing.Point(711, 647);
             this.lbltotalAmount.Name = "lbltotalAmount";
             this.lbltotalAmount.Size = new System.Drawing.Size(160, 36);
             this.lbltotalAmount.TabIndex = 1;
@@ -338,6 +340,31 @@ namespace Cachero_Group___Document_Request_System_Project
             this.label11.TabIndex = 1;
             this.label11.Text = "*";
             // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(456, 588);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(250, 36);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Estimated Processing Time:";
+            // 
+            // lblETA
+            // 
+            this.lblETA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblETA.AutoSize = true;
+            this.lblETA.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblETA.ForeColor = System.Drawing.Color.White;
+            this.lblETA.Location = new System.Drawing.Point(735, 588);
+            this.lblETA.Name = "lblETA";
+            this.lblETA.Size = new System.Drawing.Size(76, 36);
+            this.lblETA.TabIndex = 1;
+            this.lblETA.Text = "lblETA";
+            this.lblETA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ucRequestDocument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,7 +379,9 @@ namespace Cachero_Group___Document_Request_System_Project
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblETA);
             this.Controls.Add(this.lbltotalAmount);
             this.Controls.Add(this.lblCopyPrice);
             this.Controls.Add(this.label11);
@@ -393,5 +422,7 @@ namespace Cachero_Group___Document_Request_System_Project
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblETA;
     }
 }

@@ -272,6 +272,7 @@ namespace Cachero_Group___Document_Request_System_Project
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.panelDbdSidebar.ResumeLayout(false);
             this.panelDbdSidebar.PerformLayout();
             this.panel3.ResumeLayout(false);

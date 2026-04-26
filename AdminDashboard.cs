@@ -22,6 +22,7 @@ namespace Cachero_Group___Document_Request_System_Project
         {
             InitializeComponent();
             LoadPage(adminDashboardPage);
+            LoadAdminInfo();
         }
 
         private void LoadPage(UserControl page)
@@ -78,8 +79,10 @@ namespace Cachero_Group___Document_Request_System_Project
             this.Close();
         }
 
+        private bool isLoggingOut = false;
         private void btnDbdLogOut_Click(object sender, EventArgs e)
         {
+            isLoggingOut = true;
             SessionManager.Clear();
 
             Login login = new Login();
@@ -94,6 +97,40 @@ namespace Cachero_Group___Document_Request_System_Project
                 FileName = "https://plmun.edu.ph/employee/system/login/",
                 UseShellExecute = true
             });
+        }
+
+        private void LoadAdminInfo()
+        {
+            lblAdminName.Text = SessionManager.FullName;
+            lblAdminID.Text = "ID: " + SessionManager.UserID;
+            lblAdminRole.Text = SessionManager.Role.ToUpper();
+
+            if (SessionManager.Role == "admin")
+            {
+                lblAdminRole.Text = "ADMIN";
+                lblAdminRole.BackColor = Color.DarkOrange;
+            }
+            else if (SessionManager.Role == "registrar")
+            {
+                lblAdminRole.Text = "REGISTRAR";
+                lblAdminRole.BackColor = Color.RoyalBlue;
+            }
+            else if (SessionManager.Role == "guidance")
+            {
+                lblAdminRole.Text = "GUIDANCE";
+                lblAdminRole.BackColor = Color.SeaGreen;
+            }
+
+            lblAdminRole.ForeColor = Color.White;
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!isLoggingOut)
+            {
+                Application.Exit();
+            }
+
         }
     }
     }

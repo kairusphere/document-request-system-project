@@ -51,8 +51,10 @@ namespace Cachero_Group___Document_Request_System_Project
             LoadPage(new ucProfile());
         }
 
+        private bool isLoggingOut = false;
         private void btnDbdLogOut_Click(object sender, EventArgs e)
         {
+            isLoggingOut = true;
             SessionManager.Clear();
 
             Login login = new Login();
@@ -71,6 +73,13 @@ namespace Cachero_Group___Document_Request_System_Project
             }
         }
 
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!isLoggingOut)
+            {
+                Application.Exit();
+            }
 
+        }
     }
 }
